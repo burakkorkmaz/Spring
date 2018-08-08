@@ -16,15 +16,15 @@ public class FieldsController {
 		return fieldService.getAllFields();
 	}
 		
-	@RequestMapping(value = "/fields/{id}")
+	@RequestMapping(value = "/field/{id}")
 	public Field getField(@PathVariable Integer id) {
 		return fieldService.getField(id);
 	}
 	
-//	@RequestMapping(value = "/fields/{name}")
-//	public Field getField(@PathVariable String name) {
-//		return fieldService.getField(name);
-//	}
+	@RequestMapping(value = "/field")
+	public Field getFieldFromName(@RequestParam(value="name") String name) {
+		return fieldService.getFieldFromName(name);
+	}
 	
 	@RequestMapping(method = RequestMethod.POST, value= "/fields")
 	public void addField(@RequestBody Field field) {

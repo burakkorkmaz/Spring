@@ -1,6 +1,11 @@
 package com.example.springboot.fields;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Field {
+    @Id
 	private Integer id;
 	private String name;
 	private String description;
